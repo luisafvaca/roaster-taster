@@ -1,0 +1,155 @@
+@import 'tailwindcss';
+
+/* Importar estilos base después de Tailwind */
+@import './base.css';
+
+/* Variables CSS globales para Naive UI y otros usos */
+:root {
+  --color-green-50: #effdf5;
+  --color-green-100: #d9fbe8;
+  --color-green-200: #b3f5d1;
+  --color-green-300: #75edae;
+  --color-green-400: #00dc82;
+  --color-green-500: #00c16a;
+  --color-green-600: #00a155;
+  --color-green-700: #007f45;
+  --color-green-800: #016538;
+  --color-green-900: #0a5331;
+  --color-green-950: #052e16;
+
+  --color-primary-50: #f8f7f7;
+  --color-primary-100: #eae9e8;
+  --color-primary-200: #d8d6d4;
+  --color-primary-300: #b9b5b2;
+  --color-primary-400: #98928d;
+  --color-primary-500: #423d3a;
+  --color-primary-600: #3c3734;
+  --color-primary-700: #312e2c;
+  --color-primary-800: #292625;
+  --color-primary-900: #221f1e;
+  --color-primary-950: #151312;
+
+  --color-secondary-50: #fff8f0;
+  --color-secondary-100: #ffeedb;
+  --color-secondary-200: #ffdbb8;
+  --color-secondary-300: #ffc28a;
+  --color-secondary-400: #ffa65c;
+  --color-secondary-500: #ff8800;
+  --color-secondary-600: #e67700;
+  --color-secondary-700: #bf5e00;
+  --color-secondary-800: #994a00;
+  --color-secondary-900: #7d3f00;
+  --color-secondary-950: #4a2100;
+
+  --color-accent-50: #fffcf0;
+  --color-accent-100: #fff7d6;
+  --color-accent-200: #ffefae;
+  --color-accent-300: #ffe67d;
+  --color-accent-400: #ffda47;
+  --color-accent-500: #ffc907;
+  --color-accent-600: #e6b100;
+  --color-accent-700: #bf9100;
+  --color-accent-800: #997200;
+  --color-accent-900: #7d5d00;
+  --color-accent-950: #4a3400;
+
+  --color-tertiary-50: #fdf4ed;
+  --color-tertiary-100: #fbe3d0;
+  --color-tertiary-200: #f6c8a3;
+  --color-tertiary-300: #efab76;
+  --color-tertiary-400: #e68a4c;
+  --color-tertiary-500: #a44200;
+  --color-tertiary-600: #943a00;
+  --color-tertiary-700: #7a2e00;
+  --color-tertiary-800: #632502;
+  --color-tertiary-900: #511f05;
+  --color-tertiary-950: #2f1000;
+}
+
+/* Variables para Tailwind CSS v4 - referenciando las variables de :root */
+@theme {
+  --color-green-50: #effdf5;
+  --color-green-100: #d9fbe8;
+  --color-green-200: #b3f5d1;
+  --color-green-300: #75edae;
+  --color-green-400: #00dc82;
+  --color-green-500: #00c16a;
+  --color-green-600: #00a155;
+  --color-green-700: #007f45;
+  --color-green-800: #016538;
+  --color-green-900: #0a5331;
+  --color-green-950: #052e16;
+
+  --color-primary-50: #f8f7f7;
+  --color-primary-100: #eae9e8;
+  --color-primary-200: #d8d6d4;
+  --color-primary-300: #b9b5b2;
+  --color-primary-400: #98928d;
+  --color-primary-500: #423d3a;
+  --color-primary-600: #3c3734;
+  --color-primary-700: #312e2c;
+  --color-primary-800: #292625;
+  --color-primary-900: #221f1e;
+  --color-primary-950: #151312;
+
+  --color-secondary-50: #fff8f0;
+  --color-secondary-100: #ffeedb;
+  --color-secondary-200: #ffdbb8;
+  --color-secondary-300: #ffc28a;
+  --color-secondary-400: #ffa65c;
+  --color-secondary-500: #ff8800;
+  --color-secondary-600: #e67700;
+  --color-secondary-700: #bf5e00;
+  --color-secondary-800: #994a00;
+  --color-secondary-900: #7d3f00;
+  --color-secondary-950: #4a2100;
+
+  --color-accent-50: #fffcf0;
+  --color-accent-100: #fff7d6;
+  --color-accent-200: #ffefae;
+  --color-accent-300: #ffe67d;
+  --color-accent-400: #ffda47;
+  --color-accent-500: #ffc907;
+  --color-accent-600: #e6b100;
+  --color-accent-700: #bf9100;
+  --color-accent-800: #997200;
+  --color-accent-900: #7d5d00;
+  --color-accent-950: #4a3400;
+
+  --color-tertiary-50: #fdf4ed;
+  --color-tertiary-100: #fbe3d0;
+  --color-tertiary-200: #f6c8a3;
+  --color-tertiary-300: #efab76;
+  --color-tertiary-400: #e68a4c;
+  --color-tertiary-500: #a44200;
+  --color-tertiary-600: #943a00;
+  --color-tertiary-700: #7a2e00;
+  --color-tertiary-800: #632502;
+  --color-tertiary-900: #511f05;
+  --color-tertiary-950: #2f1000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
