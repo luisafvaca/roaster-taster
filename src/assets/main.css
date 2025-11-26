@@ -1,22 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import 'tailwindcss';
 
-/* Importar estilos base después de Tailwind */
 @import './base.css';
 
-/* Variables CSS globales para Naive UI y otros usos */
 :root {
-  --color-green-50: #effdf5;
-  --color-green-100: #d9fbe8;
-  --color-green-200: #b3f5d1;
-  --color-green-300: #75edae;
-  --color-green-400: #00dc82;
-  --color-green-500: #00c16a;
-  --color-green-600: #00a155;
-  --color-green-700: #007f45;
-  --color-green-800: #016538;
-  --color-green-900: #0a5331;
-  --color-green-950: #052e16;
-
   --color-primary-50: #f8f7f7;
   --color-primary-100: #eae9e8;
   --color-primary-200: #d8d6d4;
@@ -68,18 +55,6 @@
 
 /* Variables para Tailwind CSS v4 - referenciando las variables de :root */
 @theme {
-  --color-green-50: #effdf5;
-  --color-green-100: #d9fbe8;
-  --color-green-200: #b3f5d1;
-  --color-green-300: #75edae;
-  --color-green-400: #00dc82;
-  --color-green-500: #00c16a;
-  --color-green-600: #00a155;
-  --color-green-700: #007f45;
-  --color-green-800: #016538;
-  --color-green-900: #0a5331;
-  --color-green-950: #052e16;
-
   --color-primary-50: #f8f7f7;
   --color-primary-100: #eae9e8;
   --color-primary-200: #d8d6d4;
@@ -138,18 +113,4 @@ body {
   width: 100%;
   min-height: 100vh;
   font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
 }

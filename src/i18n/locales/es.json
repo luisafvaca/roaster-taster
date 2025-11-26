@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "Calculadora de Puntuación Afectiva de Café",
+    "subtitle": "SCA Coffee Value Assessment"
+  },
+  "calculator": {
+    "impressionOfQuality": "IMPRESIÓN DE CALIDAD",
+    "evaluationScale": "Escala de evaluación",
+    "fragrance": "Fragancia",
+    "aroma": "Aroma",
+    "flavor": "Sabor",
+    "aftertaste": "Regusto",
+    "acidity": "Acidez",
+    "sweetness": "Dulzor",
+    "mouthfeel": "Cuerpo",
+    "overall": "General",
+    "penalizations": "PENALIZACIONES",
+    "nonUniformCups": "Número de Tazas No Uniformes",
+    "defectiveCups": "Número de Tazas Defectuosas",
+    "affectiveScore": "Puntuación Afectiva"
+  },
+  "scale": {
+    "extremelyLow": "Extremadamente Bajo",
+    "veryLow": "Muy Bajo",
+    "moderatelyLow": "Moderadamente Bajo",
+    "slightlyLow": "Ligeramente Bajo",
+    "neitherHighNorLow": "Ni Alto ni Bajo",
+    "slightlyHigh": "Ligeramente Alto",
+    "moderatelyHigh": "Moderadamente Alto",
+    "veryHigh": "Muy Alto",
+    "extremelyHigh": "Extremadamente Alto"
+  }
+}
