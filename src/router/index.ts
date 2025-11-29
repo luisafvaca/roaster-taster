@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LocaleWrapper from '../components/LocaleWrapper.vue'
+import DefaultLayout from '../layouts/DefaultLayout.vue'
 import i18n from '../i18n'
 import { supportedLocales } from '../i18n'
 import type { SupportedLocale } from '../i18n'
@@ -10,12 +11,18 @@ const router = createRouter({
   routes: [
     {
       path: '/:locale',
-      component: LocaleWrapper,
+      component: DefaultLayout,
       children: [
         {
           path: '',
-          name: 'home',
-          component: HomeView,
+          component: LocaleWrapper,
+          children: [
+            {
+              path: '',
+              name: 'home',
+              component: HomeView,
+            },
+          ],
         },
       ],
     },
