@@ -4,7 +4,7 @@ import qualityValueMap from '../constants/qualityValueMap'
 import type { QualityKey } from '../constants/qualityCategories'
 import type { PenaltyKey } from '../constants/penaltyCategories'
 
-interface Scores {
+export interface Scores {
   fragrance: number
   aroma: number
   flavor: number
