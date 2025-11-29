@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "Coffee Affective Score Calculator",
+    "subtitle": "SCA Coffee Value Assessment"
+  },
+  "calculator": {
+    "impressionOfQuality": "IMPRESSION OF QUALITY",
+    "evaluationScale": "Evaluation scale",
+    "fragrance": "Fragrance",
+    "aroma": "Aroma",
+    "flavor": "Flavor",
+    "aftertaste": "Aftertaste",
+    "acidity": "Acidity",
+    "sweetness": "Sweetness",
+    "mouthfeel": "Mouthfeel",
+    "overall": "Overall",
+    "penalizations": "PENALIZATIONS",
+    "nonUniformCups": "Number of Non-Uniform Cups",
+    "defectiveCups": "Number of Defective Cups",
+    "affectiveScore": "Affective Score"
+  },
+  "scale": {
+    "extremelyLow": "Extremely Low",
+    "veryLow": "Very Low",
+    "moderatelyLow": "Moderately Low",
+    "slightlyLow": "Slightly Low",
+    "neitherHighNorLow": "Neither High nor Low",
+    "slightlyHigh": "Slightly High",
+    "moderatelyHigh": "Moderately High",
+    "veryHigh": "Very High",
+    "extremelyHigh": "Extremely High"
+  }
+}
