@@ -81,7 +81,109 @@
       "body": "métodos de inmersión como French Press o AeroPress",
       "versatile": "métodos versátiles como V60 o AeroPress"
     },
-    "template": "Café con {sweetness} y {acidity}. La {fragrance}, pero el {aftertaste}, lo que indica {interpretation}. Ideal para {method}."
+    "template": "Café con {sweetness} y {acidity}. La {fragrance}, pero el {aftertaste}, lo que indica {interpretation}. Ideal para {method}.",
+    "coffeeContext": {
+      "origin": {
+        "colombia": "perfiles balanceados, acidez media-alta y dulzor limpio",
+        "ethiopia": "florales, cítricos, acidez brillante",
+        "brazil": "cuerpo alto, notas achocolatadas y nueces",
+        "costaRica": "dulzor alto, acidez media, tazas limpias",
+        "guatemala": "balance, chocolate dulce, frutales rojos",
+        "kenya": "acidez jugosa, frutos rojos, vinoso",
+        "peru": "dulce, suave, aromático",
+        "default": "características típicas de su origen"
+      },
+      "variety": {
+        "caturra": "dulce, acidez media-alta, muy limpio",
+        "bourbon": "dulce, delicado, cuerpo sedoso",
+        "typica": "limpio, elegante, acidez equilibrada",
+        "geisha": "floral, jazmín, acidez alta",
+        "default": "características propias de la variedad"
+      },
+      "process": {
+        "washed": "acidez más brillante, claridad, menos cuerpo",
+        "natural": "dulzor más alto, fruta madura, cuerpo mayor",
+        "honey": "balance entre dulzor y claridad",
+        "anaerobic": "fermentación marcada, complejidad alta"
+      },
+      "roastLevel": {
+        "light": "acidez alta, más brillo y preservación de origen",
+        "medium": "balance, dulzor y acidez moderada",
+        "mediumDark": "más cuerpo y menos acidez",
+        "dark": "amargor, cuerpo intenso y notas tostadas"
+      },
+      "roastDate": {
+        "veryFresh": "Advertencia: El café podría estar muy fresco (menos de 3 días) lo que puede limitar el desarrollo completo del aroma.",
+        "optimal": "El café está en un punto óptimo de desarrollo.",
+        "aging": "Advertencia: El aroma y cuerpo pueden estar empezando a degradarse (más de 30 días).",
+        "ranges": {
+          "0-3": {
+            "title": "Muy fresco (0-3 días)",
+            "description": "Desgasificación alta, aromas intensos pero menos definidos, acidez pronunciada. Ideal para evaluar frescura, no para claridad."
+          },
+          "4-10": {
+            "title": "En desarrollo (4-10 días)",
+            "description": "Desgasificación moderada, aromas más definidos, acidez más controlada. Extracción estable, ideal para cata completa."
+          },
+          "11-20": {
+            "title": "Óptimo (11-20 días)",
+            "description": "Desgasificación baja, aromas muy definidos, dulzor desarrollado, cuerpo balanceado. Perfil equilibrado ideal para cata comparativa."
+          },
+          "21-30": {
+            "title": "Estable (21-30 días)",
+            "description": "Café completamente asentado, perfil redondo y estable. Ideal para consumo diario y evaluación consistente."
+          },
+          "30+": {
+            "title": "Envejecido (más de 30 días)",
+            "description": "Aromas volátiles se pierden, acidez apagada, menos vibrante. Estable pero puede sentirse plano en métodos delicados."
+          }
+        }
+      },
+      "penalties": {
+        "nonUniform": "Las penalizaciones reducen ligeramente la uniformidad, lo cual indica posible inconsistencia en la molienda o en el tueste.",
+        "defective": "Los defectos detectados afectan la limpieza del perfil, volviéndolo menos estable.",
+        "both": "Las penalizaciones y defectos detectados reducen la uniformidad y limpieza del perfil, indicando posibles inconsistencias en la molienda o en el tueste."
+      }
+    },
+    "templateWithContext": "Café de {origin}, {altitudeInfo}con un proceso {process} con un nivel de tueste {roastLevel}. {roastDateInfo}Destacado por {strongestPoint} y {acidity}. {fragrance}, pero el {aftertaste}, lo que indica {interpretation}. {methodNote}{penaltiesNote}",
+    "unknownOrigin": "origen desconocido",
+    "unknownProcess": "proceso no especificado",
+    "unknownRoastLevel": "nivel de tueste no especificado",
+    "balancedProfile": "perfil balanceado",
+    "methodNote": {
+      "idealFor": "Ideal para {method}.",
+      "v60": "resalta la claridad, la acidez brillante y las notas florales",
+      "chemex": "acentua una limpieza extrema y un dulzor suave, reduciendo un poco el cuerpo",
+      "espresso": "intensifica el cuerpo, la concentración aromática y la intensidad general",
+      "aeropress": "produce tazas balanceadas, suavizando acidez y resaltando dulzor y cuerpo",
+      "frenchPress": "enfatiza en el cuerpo, la textura y las notas más profundas",
+      "cupping": "muestra el perfil puro del café sin interferencias, destacando atributos y defectos"
+    },
+    "balance": {
+      "interpretation": {
+        "balanced": "un perfil balanceado",
+        "expressive": "un perfil más expresivo pero menos uniforme"
+      }
+    },
+    "sections": {
+      "origin": "Café de {origin}, conocido por {characteristics}",
+      "variety": "de variedad {variety}, apreciada por {characteristics}",
+      "processDetail": "procesado mediante {process}",
+      "roastDetail": "tostado a un nivel {level}",
+      "strengths": "Se destaca por {attributes}, que definen gran parte de su carácter sensorial",
+      "weakness": "La {attribute} es el punto más tenue, lo que puede sugerir {interpretation}",
+      "method": "Preparado con {method}, este método tiende a {methodEffect}, complementando sus características naturales",
+      "weaknessInterpretation": {
+        "fragrance": "una menor expresión aromática en seco (antes de mojar)",
+        "aroma": "una menor intensidad en la complejidad aromática",
+        "flavor": "una menor complejidad en el sabor",
+        "aftertaste": "un regusto que se percibe más corto",
+        "acidity": "una menor brillantez o definición",
+        "sweetness": "una falta de dulzor",
+        "mouthfeel": "una textura o cuerpo ligeros",
+        "default": "un aspecto menos desarrollado"
+      }
+    }
   },
   "stats": {
     "strongest": "Mayor Fortaleza",
@@ -101,5 +203,55 @@
     "penaltyImpact": "Impacto de penalizaciones",
     "nonUniformCup": "Taza no uniforme",
     "defectiveCup": "Taza defectuosa"
+  },
+  "coffeeInfo": {
+    "sectionTitle": "Información del Café",
+    "modalTitle": "Información del Café",
+    "modalSubtitle": "Completa estos datos para mejorar el análisis",
+    "origin": {
+      "label": "¿De qué país es el café?",
+      "placeholder": "Selecciona un país",
+      "other": "Otro",
+      "otherPlaceholder": "Escribe el país"
+    },
+    "variety": {
+      "label": "¿Qué variedad es?",
+      "placeholder": "Selecciona una variedad",
+      "other": "Otro",
+      "otherPlaceholder": "Escribe la variedad"
+    },
+    "process": {
+      "label": "¿Qué proceso tiene?",
+      "washed": "Lavado",
+      "natural": "Natural",
+      "honey": "Honey",
+      "anaerobic": "Anaeróbico"
+    },
+    "roastLevel": {
+      "label": "¿Nivel de tueste?",
+      "light": "Claro",
+      "medium": "Medio",
+      "mediumDark": "Medio-oscuro",
+      "dark": "Oscuro"
+    },
+    "brewingMethod": {
+      "label": "¿Qué método usaste para catarlo?",
+      "v60": "V60",
+      "chemex": "Chemex",
+      "espresso": "Espresso",
+      "aeropress": "Aeropress",
+      "frenchPress": "Prensa francesa",
+      "cupping": "Cupping"
+    },
+    "roastDate": {
+      "label": "¿Cuántos días han pasado desde el tueste?",
+      "placeholder": "Días",
+      "days": "días desde el tueste"
+    },
+    "buttons": {
+      "continue": "Continuar",
+      "skip": "Omitir",
+      "addInfo": "Mejorar Análisis"
+    }
   }
 }

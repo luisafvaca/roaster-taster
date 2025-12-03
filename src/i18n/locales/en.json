@@ -81,7 +81,108 @@
       "body": "immersion methods such as French Press or AeroPress",
       "versatile": "versatile methods such as V60 or AeroPress"
     },
-    "template": "Coffee with {sweetness} and {acidity}. The {fragrance}, but the {aftertaste}, which indicates {interpretation}. Ideal for {method}."
+    "template": "Coffee with {sweetness} and {acidity}. The {fragrance}, but the {aftertaste}, which indicates {interpretation}. Ideal for {method}.",
+    "coffeeContext": {
+      "origin": {
+        "colombia": "balanced profiles, medium-high acidity and clean sweetness",
+        "ethiopia": "floral, citrus, bright acidity",
+        "brazil": "high body, chocolate and nutty notes",
+        "costaRica": "high sweetness, medium acidity, clean cups",
+        "guatemala": "balance, sweet chocolate, red fruits",
+        "kenya": "juicy acidity, red fruits, winey",
+        "peru": "sweet, soft, aromatic",
+        "default": "typical characteristics of its origin"
+      },
+      "variety": {
+        "caturra": "sweet, medium-high acidity, very clean",
+        "bourbon": "sweet, delicate, silky body",
+        "typica": "clean, elegant, balanced acidity",
+        "geisha": "floral, jasmine, high acidity",
+        "default": "characteristics typical of the variety"
+      },
+      "process": {
+        "washed": "brighter acidity, clarity, less body",
+        "natural": "higher sweetness, ripe fruit, greater body",
+        "honey": "balance between sweetness and clarity",
+        "anaerobic": "marked fermentation, high complexity"
+      },
+      "roastLevel": {
+        "light": "high acidity, more brightness, more origin",
+        "medium": "balance, moderate sweetness and acidity",
+        "mediumDark": "more body, less acidity",
+        "dark": "bitterness, intense body, roasted notes"
+      },
+      "roastDate": {
+        "veryFresh": "May be very fresh, incomplete aroma development.",
+        "optimal": "At optimal development point.",
+        "aging": "Aroma and body may be starting to degrade.",
+        "ranges": {
+          "0-3": {
+            "title": "Very fresh (0-3 days)",
+            "description": "High degassing, intense but less defined aromas, pronounced acidity. Ideal for evaluating freshness, not clarity."
+          },
+          "4-10": {
+            "title": "Developing (4-10 days)",
+            "description": "Moderate degassing, more defined aromas, more controlled acidity. Stable extraction, ideal for complete cupping."
+          },
+          "11-20": {
+            "title": "Optimal (11-20 days)",
+            "description": "Low degassing, very defined aromas, developed sweetness, balanced body. Balanced profile ideal for comparative cupping."
+          },
+          "21-30": {
+            "title": "Stable (21-30 days)",
+            "description": "Coffee completely settled, round and stable profile. Ideal for daily consumption and consistent evaluation."
+          },
+          "30+": {
+            "title": "Aged (more than 30 days)",
+            "description": "Volatile aromas are lost, muted acidity, less vibrant. Stable but may feel flat in delicate methods."
+          }
+        }
+      },
+      "penalties": {
+        "nonUniform": "Penalties slightly reduce uniformity, which may indicate inconsistency in grinding or roasting.",
+        "defective": "Detected defects affect the profile's cleanliness, making it less stable.",
+        "both": "Penalties and detected defects reduce the profile's uniformity and cleanliness, indicating possible inconsistencies in grinding or roasting."
+      }
+    },
+    "templateWithContext": "Coffee from {origin}, {altitudeInfo}with a {process} process with a {roastLevel} roast level. {roastDateInfo}Highlighted by {strongestPoint} and {acidity}. {fragrance}, but the {aftertaste}, which indicates {interpretation}. {methodNote}{penaltiesNote}",
+    "unknownOrigin": "unknown origin",
+    "unknownProcess": "unspecified process",
+    "unknownRoastLevel": "unspecified roast level",
+    "balancedProfile": "balanced profile",
+    "methodNote": {
+      "idealFor": "Ideal for {method}.",
+      "v60": "highlights clarity, bright acidity, and floral notes",
+      "chemex": "accentuates extreme cleanliness and soft sweetness, slightly reducing body",
+      "espresso": "intensifies body, aromatic concentration, and overall intensity",
+      "aeropress": "produces balanced cups, softening acidity and highlighting sweetness and body",
+      "frenchPress": "emphasizes body, texture, and the deeper notes",
+      "cupping": "shows the pure profile of the coffee without interference, highlighting attributes and defects"
+    },
+    "balance": {
+      "interpretation": {
+        "balanced": "a balanced profile",
+        "expressive": "a more expressive but less uniform profile"
+      }
+    },
+    "sections": {
+      "origin": "Coffee from {origin}, known for {characteristics}",
+      "variety": "variety {variety}, appreciated for {characteristics}",
+      "processRoast": "Processed using {process}, which contributes {processEffect}, and roasted to a {roastLevel} level, which {roastEffect}",
+      "strengths": "It stands out for {attributes}, which define much of its sensory character",
+      "weakness": "The {attribute} is the most subtle point, which may suggest {interpretation}",
+      "method": "Prepared with {method}, this method tends to {methodEffect}, complementing its natural characteristics",
+      "weaknessInterpretation": {
+        "fragrance": "a less aromatic profile at the start",
+        "aroma": "lower aromatic intensity",
+        "flavor": "less complexity in flavor",
+        "aftertaste": "a shorter aftertaste",
+        "acidity": "less brightness",
+        "sweetness": "less sweetness",
+        "mouthfeel": "less body",
+        "default": "a less developed aspect"
+      }
+    }
   },
   "stats": {
     "strongest": "Strongest Attribute",
@@ -101,5 +202,55 @@
     "penaltyImpact": "Penalty impact",
     "nonUniformCup": "Non-uniform cup",
     "defectiveCup": "Defective cup"
+  },
+  "coffeeInfo": {
+    "sectionTitle": "Coffee Information",
+    "modalTitle": "Coffee Information",
+    "modalSubtitle": "Complete this data to improve the analysis",
+    "origin": {
+      "label": "What country is the coffee from?",
+      "placeholder": "Select a country",
+      "other": "Other",
+      "otherPlaceholder": "Enter the country"
+    },
+    "variety": {
+      "label": "What variety is it?",
+      "placeholder": "Select a variety",
+      "other": "Other",
+      "otherPlaceholder": "Enter the variety"
+    },
+    "process": {
+      "label": "What process does it have?",
+      "washed": "Washed",
+      "natural": "Natural",
+      "honey": "Honey",
+      "anaerobic": "Anaerobic"
+    },
+    "roastLevel": {
+      "label": "Roast level?",
+      "light": "Light",
+      "medium": "Medium",
+      "mediumDark": "Medium-dark",
+      "dark": "Dark"
+    },
+    "brewingMethod": {
+      "label": "What method did you use to cup it?",
+      "v60": "V60",
+      "chemex": "Chemex",
+      "espresso": "Espresso",
+      "aeropress": "Aeropress",
+      "frenchPress": "French Press",
+      "cupping": "Cupping"
+    },
+    "roastDate": {
+      "label": "How many days have passed since roasting?",
+      "placeholder": "Days",
+      "days": "days since roasting"
+    },
+    "buttons": {
+      "continue": "Continue",
+      "skip": "Skip",
+      "addInfo": "Improve Analysis"
+    }
   }
 }
