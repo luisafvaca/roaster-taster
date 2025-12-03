@@ -173,19 +173,41 @@ const getVarietyCharacteristics = (): string => {
   const variety = coffeeInfo.variety === 'other' ? coffeeInfo.varietyOther : coffeeInfo.variety
   if (!variety || !variety.trim()) return ''
 
-  const varietyLower = variety.toLowerCase()
-  if (varietyLower.includes('caturra')) {
-    return t('insight.coffeeContext.variety.caturra')
+  const varietyLower = variety.toLowerCase().replace(/\s+/g, '')
+
+  // Mapeo de variedades a claves de traducción
+  const varietyMap: Record<string, string> = {
+    caturra: 'caturra',
+    bourbon: 'bourbon',
+    typica: 'typica',
+    geisha: 'geisha',
+    gesha: 'geisha',
+    mundonovo: 'mundoNovo',
+    catuai: 'catuai',
+    pacamara: 'pacamara',
+    maragogype: 'maragogype',
+    sl28: 'sl28',
+    sl34: 'sl34',
+    ruiru11: 'ruiru11',
+    ruiru: 'ruiru11',
+    ethiopianheirloom: 'ethiopianHeirloom',
+    heirloom: 'ethiopianHeirloom',
+    sidamo: 'sidamo',
+    yirgacheffe: 'yirgacheffe',
+    harrar: 'harrar',
+    java: 'java',
+    sumatra: 'sumatra',
+    sulawesi: 'sulawesi',
+    bluemountain: 'blueMountain',
+    villasarche: 'villaSarchi',
+    villasarchi: 'villaSarchi',
   }
-  if (varietyLower.includes('bourbon')) {
-    return t('insight.coffeeContext.variety.bourbon')
+
+  const varietyKey = varietyMap[varietyLower]
+  if (varietyKey) {
+    return t(`insight.coffeeContext.variety.${varietyKey}`)
   }
-  if (varietyLower.includes('typica')) {
-    return t('insight.coffeeContext.variety.typica')
-  }
-  if (varietyLower.includes('geisha') || varietyLower.includes('gesha')) {
-    return t('insight.coffeeContext.variety.geisha')
-  }
+
   return ''
 }
 

@@ -312,7 +312,6 @@ const coffeeCountries = [
   'Bolivia',
 ]
 
-// Lista de variedades de café más comunes
 const coffeeVarieties = [
   'Caturra',
   'Bourbon',
