@@ -19,7 +19,7 @@ const props = defineProps<{
   max: number | string
   step: number | string
   variant: 'primary' | 'secondary' | 'tertiary' | 'error'
-  size: 'sm' | 'md' | 'lg'
+  size: 'xs' | 'sm' | 'md' | 'lg'
 }>()
 
 const emit = defineEmits<{
@@ -35,6 +35,7 @@ const rangeClasses = computed(() => {
   }[props.variant]
 
   const sizeClass = {
+    xs: 'range-xs',
     sm: 'range-sm',
     md: 'range-md',
     lg: 'range-lg',

@@ -29,5 +29,77 @@
     "moderatelyHigh": "Moderadamente Alto",
     "veryHigh": "Muito Alto",
     "extremelyHigh": "Extremamente Alto"
+  },
+  "insight": {
+    "title": "Insight",
+    "sweetness": {
+      "outstanding": "doçura destacada",
+      "medium": "doçura média",
+      "low": "doçura baixa"
+    },
+    "acidity": {
+      "high": "acidez alta",
+      "medium": "acidez média",
+      "low": "acidez baixa",
+      "veryLow": "acidez muito baixa"
+    },
+    "fragrance": {
+      "high": "fragrância alta",
+      "medium": "fragrância média",
+      "low": "fragrância baixa"
+    },
+    "aftertaste": {
+      "long": "retrogosto longo e persistente",
+      "medium": "retrogosto médio",
+      "short": "retrogosto curto",
+      "veryShort": "retrogosto muito curto"
+    },
+    "aroma": {
+      "intense": "aroma intenso",
+      "moderate": "aroma moderado",
+      "soft": "aroma suave"
+    },
+    "flavor": {
+      "complex": "sabor complexo",
+      "balanced": "sabor equilibrado",
+      "simple": "sabor simples"
+    },
+    "mouthfeel": {
+      "full": "corpo completo",
+      "medium": "corpo médio",
+      "light": "corpo leve"
+    },
+    "interpretation": {
+      "highQuality": "um perfil de alta qualidade",
+      "balanced": "um perfil equilibrado",
+      "needsAttention": "um perfil que requer atenção"
+    },
+    "method": {
+      "aciditySweetness": "métodos que realçam a acidez e doçura, como V60 ou Chemex",
+      "sweetnessBody": "métodos que potencializam o corpo, como French Press ou AeroPress",
+      "acidity": "métodos de filtro que realçam a acidez, como V60",
+      "body": "métodos de imersão como French Press ou AeroPress",
+      "versatile": "métodos versáteis como V60 ou AeroPress"
+    },
+    "template": "Café com {sweetness} e {acidity}. A {fragrance}, mas o {aftertaste}, o que indica {interpretation}. Ideal para {method}."
+  },
+  "stats": {
+    "strongest": "Maior Força",
+    "weakest": "Ponto Fraco",
+    "balance": "Equilíbrio Geral",
+    "uniformAttributes": "Atributos uniformes",
+    "uniformProfile": "Perfil uniforme",
+    "balanceLevel": {
+      "balanced": "Equilibrado",
+      "moderatelyBalanced": "Moderadamente equilibrado",
+      "unbalanced": "Desequilibrado"
+    }
+  },
+  "charts": {
+    "flavorProfile": "Perfil de Sabor",
+    "penalizations": "Penalizações",
+    "penaltyImpact": "Impacto das penalizações",
+    "nonUniformCup": "Xícara não uniforme",
+    "defectiveCup": "Xícara defeituosa"
   }
 }

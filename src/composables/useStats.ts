@@ -1,9 +1,11 @@
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { Scores } from './useCalculator'
 import qualityCategories from '../constants/qualityCategories'
 
 export function useStats(scores: { value: Scores }) {
-  // Obtener solo los atributos de calidad (excluyendo penalizaciones)
+  const { t } = useI18n()
+
   const qualityAttributes = computed(() => {
     return qualityCategories.map((cat) => ({
       key: cat.key,
@@ -12,7 +14,6 @@ export function useStats(scores: { value: Scores }) {
     }))
   })
 
-  // Mayor fortaleza sensorial (max)
   const strongestAttribute = computed(() => {
     const attributes = qualityAttributes.value
     if (attributes.length === 0) {
@@ -23,7 +24,6 @@ export function useStats(scores: { value: Scores }) {
     return found ?? attributes[0]
   })
 
-  // Punto débil (min)
   const weakestAttribute = computed(() => {
     const attributes = qualityAttributes.value
     if (attributes.length === 0) {
@@ -42,6 +42,13 @@ export function useStats(scores: { value: Scores }) {
     return Math.sqrt(avgSquaredDiff)
   }
 
+  // Detectar si todos los atributos son iguales
+  const allEqual = computed(() => {
+    const values = qualityAttributes.value.map((a) => a.value)
+    if (values.length === 0) return false
+    return values.every((v) => v === values[0])
+  })
+
   // Balance general
   const balance = computed(() => {
     const values = qualityAttributes.value.map((a) => a.value)
@@ -49,17 +56,22 @@ export function useStats(scores: { value: Scores }) {
 
     // Categorizar basándose en la desviación estándar
     if (stdDev < 1.2) {
-      return { level: 'balanceado', stdDev }
+      return { level: 'balanced', levelKey: 'stats.balanceLevel.balanced', stdDev }
     }
     if (stdDev <= 2.0) {
-      return { level: 'medianamente balanceado', stdDev }
+      return {
+        level: 'moderatelyBalanced',
+        levelKey: 'stats.balanceLevel.moderatelyBalanced',
+        stdDev,
+      }
     }
-    return { level: 'desbalanceado', stdDev }
+    return { level: 'unbalanced', levelKey: 'stats.balanceLevel.unbalanced', stdDev }
   })
 
   return {
     strongestAttribute,
     weakestAttribute,
     balance,
+    allEqual,
   }
 }

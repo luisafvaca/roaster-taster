@@ -1,34 +1,7 @@
 <template>
   <div class="w-full max-w-2xl mx-auto space-y-6">
-    <!-- Casillas visuales -->
-    <div class="space-y-4">
-      <div v-for="penalty in penaltyCategories" :key="penalty.key" class="flex items-center gap-3">
-        <div class="flex items-center gap-2 min-w-[200px]">
-          <span class="text-sm font-semibold text-primary-700">
-            {{ $t(penalty.labelKey) }}
-          </span>
-        </div>
-        <div class="flex items-center gap-2 flex-1">
-          <div class="flex gap-1">
-            <span
-              v-for="i in 5"
-              :key="i"
-              :class="[
-                'w-6 h-6 rounded transition-colors',
-                i <= scores[penalty.key] ? 'bg-error-500' : 'bg-gray-200 border border-gray-300',
-              ]"
-              :title="`${i <= scores[penalty.key] ? 'Lleno' : 'Vacío'}`"
-            ></span>
-          </div>
-          <span class="text-sm font-medium text-primary-600 min-w-[60px]">
-            {{ scores[penalty.key] }}
-          </span>
-        </div>
-      </div>
-    </div>
-
     <!-- Gráfico de barras horizontales con impacto -->
-    <div class="space-y-3 pt-4 border-t border-gray-300">
+    <div class="space-y-3 pt-4">
       <div
         v-for="penalty in penaltyCategories"
         :key="`impact-${penalty.key}`"
@@ -58,6 +31,7 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import type { Scores } from '../composables/useCalculator'
 import penaltyCategories from '../constants/penaltyCategories'
 
@@ -65,12 +39,14 @@ const props = defineProps<{
   scores: Scores
 }>()
 
+const { t } = useI18n()
+
 const getPenaltyLabel = (key: string): string => {
   const labelMap: Record<string, string> = {
-    nonUniformCups: 'Taza no uniforme',
-    defectiveCups: 'Taza defectuosa',
+    nonUniformCups: 'charts.nonUniformCup',
+    defectiveCups: 'charts.defectiveCup',
   }
-  return labelMap[key] || key
+  return t(labelMap[key] || key)
 }
 
 const getImpactValue = (key: string): number => {

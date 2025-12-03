@@ -1,49 +1,52 @@
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { Scores } from './useCalculator'
 
 export function useInsight(scores: { value: Scores }) {
+  const { t } = useI18n()
+
   const getSweetnessDesc = (value: number): string => {
-    if (value >= 7) return 'dulzor destacado'
-    if (value >= 4) return 'dulzor medio'
-    return 'dulzor bajo'
+    if (value >= 7) return t('insight.sweetness.outstanding')
+    if (value >= 4) return t('insight.sweetness.medium')
+    return t('insight.sweetness.low')
   }
 
   const getAcidityDesc = (value: number): string => {
-    if (value >= 7) return 'acidez alta'
-    if (value >= 5) return 'acidez media'
-    if (value >= 3) return 'acidez baja'
-    return 'acidez muy baja'
+    if (value >= 7) return t('insight.acidity.high')
+    if (value >= 5) return t('insight.acidity.medium')
+    if (value >= 3) return t('insight.acidity.low')
+    return t('insight.acidity.veryLow')
   }
 
   const getFragranceDesc = (value: number): string => {
-    if (value >= 7) return 'fragancia alta'
-    if (value >= 5) return 'fragancia media'
-    return 'fragancia baja'
+    if (value >= 7) return t('insight.fragrance.high')
+    if (value >= 5) return t('insight.fragrance.medium')
+    return t('insight.fragrance.low')
   }
 
   const getAftertasteDesc = (value: number): string => {
-    if (value >= 7) return 'regusto largo y persistente'
-    if (value >= 5) return 'regusto medio'
-    if (value >= 3) return 'regusto corto'
-    return 'regusto muy corto'
+    if (value >= 7) return t('insight.aftertaste.long')
+    if (value >= 5) return t('insight.aftertaste.medium')
+    if (value >= 3) return t('insight.aftertaste.short')
+    return t('insight.aftertaste.veryShort')
   }
 
   const getAromaDesc = (value: number): string => {
-    if (value >= 7) return 'aroma intenso'
-    if (value >= 5) return 'aroma moderado'
-    return 'aroma suave'
+    if (value >= 7) return t('insight.aroma.intense')
+    if (value >= 5) return t('insight.aroma.moderate')
+    return t('insight.aroma.soft')
   }
 
   const getFlavorDesc = (value: number): string => {
-    if (value >= 7) return 'sabor complejo'
-    if (value >= 5) return 'sabor balanceado'
-    return 'sabor simple'
+    if (value >= 7) return t('insight.flavor.complex')
+    if (value >= 5) return t('insight.flavor.balanced')
+    return t('insight.flavor.simple')
   }
 
   const getMouthfeelDesc = (value: number): string => {
-    if (value >= 7) return 'cuerpo completo'
-    if (value >= 5) return 'cuerpo medio'
-    return 'cuerpo ligero'
+    if (value >= 7) return t('insight.mouthfeel.full')
+    if (value >= 5) return t('insight.mouthfeel.medium')
+    return t('insight.mouthfeel.light')
   }
 
   const getInterpretation = (scores: Scores): string => {
@@ -59,30 +62,30 @@ export function useInsight(scores: { value: Scores }) {
       8
 
     if (avgQuality >= 7) {
-      return 'un perfil de alta calidad'
+      return t('insight.interpretation.highQuality')
     }
     if (avgQuality >= 5) {
-      return 'un perfil balanceado'
+      return t('insight.interpretation.balanced')
     }
-    return 'un perfil que requiere atención'
+    return t('insight.interpretation.needsAttention')
   }
 
   const getMethodSuggestion = (scores: Scores): string => {
     const { acidity, sweetness, mouthfeel } = scores
 
     if (acidity >= 7 && sweetness >= 6) {
-      return 'métodos que resalten la acidez y dulzor, como V60 o Chemex'
+      return t('insight.method.aciditySweetness')
     }
     if (sweetness >= 7 && mouthfeel >= 6) {
-      return 'métodos que potencien el cuerpo, como French Press o AeroPress'
+      return t('insight.method.sweetnessBody')
     }
     if (acidity >= 7) {
-      return 'métodos de filtro que resalten la acidez, como V60'
+      return t('insight.method.acidity')
     }
     if (mouthfeel >= 7) {
-      return 'métodos de inmersión como French Press o AeroPress'
+      return t('insight.method.body')
     }
-    return 'métodos versátiles como V60 o AeroPress'
+    return t('insight.method.versatile')
   }
 
   const insight = computed(() => {
@@ -95,7 +98,14 @@ export function useInsight(scores: { value: Scores }) {
     const interpretation = getInterpretation(s)
     const methodSuggestion = getMethodSuggestion(s)
 
-    return `Café con ${sweetnessDesc} y ${acidityDesc}. La ${fragranceDesc}, pero el ${aftertasteDesc}, lo que indica ${interpretation}. Ideal para ${methodSuggestion}.`
+    return t('insight.template', {
+      sweetness: sweetnessDesc,
+      acidity: acidityDesc,
+      fragrance: fragranceDesc,
+      aftertaste: aftertasteDesc,
+      interpretation,
+      method: methodSuggestion,
+    })
   })
 
   return {

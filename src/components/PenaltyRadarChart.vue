@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-md mx-auto rounded-lg p-4">
+  <div class="w-full max-w-md mx-auto mb-6">
     <canvas ref="chartCanvas"></canvas>
   </div>
 </template>
@@ -27,21 +27,30 @@ const getChartData = () => {
     return t(cat.labelKey)
   })
 
-  const data = qualityCategories.map((cat) => props.scores[cat.key])
+  const totalPenalty = props.scores.nonUniformCups * 2.0 + props.scores.defectiveCups * 4.0
+  const maxPossiblePenalty = 5 * 2.0 + 5 * 4.0
+
+  const penaltyPercentage = (totalPenalty / maxPossiblePenalty) * 100
+
+  const data = qualityCategories.map((cat) => {
+    const attributeValue = props.scores[cat.key]
+    const reduction = (attributeValue / 9) * penaltyPercentage
+    return Math.max(100 - reduction, 0)
+  })
 
   return {
     labels,
     datasets: [
       {
-        label: t('charts.flavorProfile'),
+        label: t('charts.penaltyImpact'),
         data,
-        backgroundColor: 'rgba(255, 165, 0, 0.2)', // Naranja con transparencia
-        borderColor: '#FFA500', // Naranja sólido para el borde
+        backgroundColor: 'rgba(220, 20, 60, 0.2)',
+        borderColor: '#DC143C',
         borderWidth: 2,
-        pointBackgroundColor: '#FFA500',
+        pointBackgroundColor: '#DC143C',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: '#FFA500',
+        pointHoverBorderColor: '#DC143C',
       },
     ],
   }
@@ -59,8 +68,8 @@ const createChart = () => {
       scales: {
         r: {
           min: 0,
-          max: 10,
-          ticks: { stepSize: 1 },
+          max: 100,
+          ticks: { stepSize: 20 },
           grid: { color: '#EEE' },
         },
       },
@@ -106,3 +115,7 @@ watch(
   },
 )
 </script>
+
+<style scoped>
+/* Estilos adicionales si son necesarios */
+</style>

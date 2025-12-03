@@ -29,5 +29,77 @@
     "moderatelyHigh": "Moderately High",
     "veryHigh": "Very High",
     "extremelyHigh": "Extremely High"
+  },
+  "insight": {
+    "title": "Insight",
+    "sweetness": {
+      "outstanding": "outstanding sweetness",
+      "medium": "medium sweetness",
+      "low": "low sweetness"
+    },
+    "acidity": {
+      "high": "high acidity",
+      "medium": "medium acidity",
+      "low": "low acidity",
+      "veryLow": "very low acidity"
+    },
+    "fragrance": {
+      "high": "high fragrance",
+      "medium": "medium fragrance",
+      "low": "low fragrance"
+    },
+    "aftertaste": {
+      "long": "long and persistent aftertaste",
+      "medium": "medium aftertaste",
+      "short": "short aftertaste",
+      "veryShort": "very short aftertaste"
+    },
+    "aroma": {
+      "intense": "intense aroma",
+      "moderate": "moderate aroma",
+      "soft": "soft aroma"
+    },
+    "flavor": {
+      "complex": "complex flavor",
+      "balanced": "balanced flavor",
+      "simple": "simple flavor"
+    },
+    "mouthfeel": {
+      "full": "full body",
+      "medium": "medium body",
+      "light": "light body"
+    },
+    "interpretation": {
+      "highQuality": "a high-quality profile",
+      "balanced": "a balanced profile",
+      "needsAttention": "a profile that requires attention"
+    },
+    "method": {
+      "aciditySweetness": "methods that highlight acidity and sweetness, such as V60 or Chemex",
+      "sweetnessBody": "methods that enhance body, such as French Press or AeroPress",
+      "acidity": "filter methods that highlight acidity, such as V60",
+      "body": "immersion methods such as French Press or AeroPress",
+      "versatile": "versatile methods such as V60 or AeroPress"
+    },
+    "template": "Coffee with {sweetness} and {acidity}. The {fragrance}, but the {aftertaste}, which indicates {interpretation}. Ideal for {method}."
+  },
+  "stats": {
+    "strongest": "Strongest Attribute",
+    "weakest": "Weakest Point",
+    "balance": "Overall Balance",
+    "uniformAttributes": "Uniform attributes",
+    "uniformProfile": "Uniform profile",
+    "balanceLevel": {
+      "balanced": "Balanced",
+      "moderatelyBalanced": "Moderately balanced",
+      "unbalanced": "Unbalanced"
+    }
+  },
+  "charts": {
+    "flavorProfile": "Flavor Profile",
+    "penalizations": "Penalizations",
+    "penaltyImpact": "Penalty impact",
+    "nonUniformCup": "Non-uniform cup",
+    "defectiveCup": "Defective cup"
   }
 }

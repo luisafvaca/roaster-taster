@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
-    <div class="bg-base-200 rounded-lg p-6">
-      <h4 class="text-lg font-bold text-primary-800 mb-3">Insight Automático</h4>
+    <div class="bg-primary-100 rounded-lg p-6">
+      <h4 class="text-lg font-bold text-primary-800 mb-3">{{ $t('insight.title') }}</h4>
       <p class="text-primary-700 leading-relaxed">{{ insight }}</p>
     </div>
   </div>
@@ -17,7 +17,3 @@ const props = defineProps<{
 
 const { insight } = useInsight({ value: props.scores })
 </script>
-
-<style scoped>
-/* Estilos adicionales si son necesarios */
-</style>
