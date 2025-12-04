@@ -228,6 +228,35 @@
       "other": "Altro",
       "otherPlaceholder": "Inserisci il paese"
     },
+    "altitude": {
+      "label": "A quale altitudine viene coltivato?",
+      "placeholder": "Seleziona un intervallo",
+      "unit": "m.s.l.m.",
+      "ranges": {
+        "veryHigh": "1500+ m.s.l.m.",
+        "high": "1200-1499 m.s.l.m.",
+        "medium": "900-1199 m.s.l.m.",
+        "low": "500-899 m.s.l.m.",
+        "veryLow": "<500 m.s.l.m."
+      },
+      "categories": {
+        "veryHigh": {
+          "description": "Maturazione lenta per clima freddo. Chicco più denso. Maggiore concentrazione di zuccheri e acidi. Acidità brillante (citrica/fruttata), sapori complessi (floreali, fruttati), corpo leggero a medio."
+        },
+        "high": {
+          "description": "Maturazione lenta per clima freddo. Chicco più denso. Maggiore concentrazione di zuccheri e acidi. Acidità brillante (citrica/fruttata), sapori complessi (floreali, fruttati), corpo leggero a medio."
+        },
+        "medium": {
+          "description": "Richiede clima più fresco e stabile. Sapore di qualità superiore, più fine e aromatico."
+        },
+        "low": {
+          "description": "Maturazione rapida. Chicco meno denso. Meno zuccheri e acidi. Acidità bassa o morbida, sapori più piatti, neutri o \"tostati\", corpo più pesante."
+        },
+        "veryLow": {
+          "description": "Cresce più velocemente, tollera più calore e umidità. Sapore più rustico, amaro, meno acido, alto contenuto di caffeina."
+        }
+      }
+    },
     "variety": {
       "label": "Che varietà è?",
       "placeholder": "Seleziona una varietà",

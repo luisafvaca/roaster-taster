@@ -228,6 +228,35 @@
       "other": "Outro",
       "otherPlaceholder": "Digite o país"
     },
+    "altitude": {
+      "label": "A que altitude é cultivado?",
+      "placeholder": "Selecione um intervalo",
+      "unit": "m.s.n.m.",
+      "ranges": {
+        "veryHigh": "1500+ m.s.n.m.",
+        "high": "1200-1499 m.s.n.m.",
+        "medium": "900-1199 m.s.n.m.",
+        "low": "500-899 m.s.n.m.",
+        "veryLow": "<500 m.s.n.m."
+      },
+      "categories": {
+        "veryHigh": {
+          "description": "Maturação lenta devido ao clima frio. Grão mais denso. Maior concentração de açúcares e ácidos. Acidez brilhante (cítrica/frutal), sabores complexos (floral, frutal), corpo leve a médio."
+        },
+        "high": {
+          "description": "Maturação lenta devido ao clima frio. Grão mais denso. Maior concentração de açúcares e ácidos. Acidez brilhante (cítrica/frutal), sabores complexos (floral, frutal), corpo leve a médio."
+        },
+        "medium": {
+          "description": "Requer clima mais fresco e estável. Sabor de maior qualidade, mais fino e aromático."
+        },
+        "low": {
+          "description": "Maturação rápida. Grão menos denso. Menos açúcares e ácidos. Acidez baixa ou suave, sabores mais planos, neutros ou \"torrados\", corpo mais pesado."
+        },
+        "veryLow": {
+          "description": "Cresce mais rápido, tolera mais calor e umidade. Sabor mais rústico, amargo, menos ácido, alto em cafeína."
+        }
+      }
+    },
     "variety": {
       "label": "Que variedade é?",
       "placeholder": "Selecione uma variedade",

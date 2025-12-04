@@ -270,3 +270,13 @@ body {
   min-height: 100vh;
   font-weight: normal;
 }
+
+/* Custom tooltip styles with primary-500 background */
+.tooltip::before {
+  background-color: var(--color-primary-500) !important;
+  color: white !important;
+}
+
+.tooltip::after {
+  border-top-color: var(--color-primary-500) !important;
+}

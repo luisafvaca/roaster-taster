@@ -7,12 +7,12 @@
     </div>
     <div class="mx-auto max-w-4xl">
       <div class="card-body">
-        <CoffeeInfoSection />
+        <StatsSection :scores="scores" />
       </div>
     </div>
     <div class="mx-auto max-w-4xl">
       <div class="card-body">
-        <StatsSection :scores="scores" />
+        <CoffeeInfoSection />
       </div>
     </div>
     <div class="card mx-auto max-w-4xl">

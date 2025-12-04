@@ -54,7 +54,27 @@
           />
         </div>
 
-        <!-- 2. Variedad -->
+        <!-- 2. Altitud -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text font-semibold text-primary-700">
+              {{ $t('coffeeInfo.altitude.label') }}
+            </span>
+          </label>
+          <select
+            v-model="coffeeInfo.altitude"
+            class="select select-bordered w-full bg-base-100 border-primary-300 focus:border-primary-500 focus:outline-primary-500"
+          >
+            <option value="">{{ $t('coffeeInfo.altitude.placeholder') }}</option>
+            <option value="veryHigh">{{ $t('coffeeInfo.altitude.ranges.veryHigh') }}</option>
+            <option value="high">{{ $t('coffeeInfo.altitude.ranges.high') }}</option>
+            <option value="medium">{{ $t('coffeeInfo.altitude.ranges.medium') }}</option>
+            <option value="low">{{ $t('coffeeInfo.altitude.ranges.low') }}</option>
+            <option value="veryLow">{{ $t('coffeeInfo.altitude.ranges.veryLow') }}</option>
+          </select>
+        </div>
+
+        <!-- 3. Variedad -->
         <div class="form-control">
           <label class="label">
             <span class="label-text font-semibold text-primary-700">
@@ -80,7 +100,7 @@
           />
         </div>
 
-        <!-- 3. Proceso -->
+        <!-- 4. Proceso -->
         <div class="form-control">
           <label class="label">
             <span class="label-text font-semibold text-primary-700">
@@ -89,45 +109,45 @@
           </label>
           <div class="grid grid-cols-2 gap-2">
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.process.washed') }}</span>
               <input
                 type="radio"
                 value="washed"
                 v-model="coffeeInfo.process"
-                class="radio radio-primary"
+                class="radio radio-primary radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.process.washed') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.process.natural') }}</span>
               <input
                 type="radio"
                 value="natural"
                 v-model="coffeeInfo.process"
-                class="radio radio-primary"
+                class="radio radio-primary radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.process.natural') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.process.honey') }}</span>
               <input
                 type="radio"
                 value="honey"
                 v-model="coffeeInfo.process"
-                class="radio radio-primary"
+                class="radio radio-primary radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.process.honey') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.process.anaerobic') }}</span>
               <input
                 type="radio"
                 value="anaerobic"
                 v-model="coffeeInfo.process"
-                class="radio radio-primary"
+                class="radio radio-primary radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.process.anaerobic') }}</span>
             </label>
           </div>
         </div>
 
-        <!-- 4. Nivel de tueste -->
+        <!-- 5. Nivel de tueste -->
         <div class="form-control">
           <label class="label">
             <span class="label-text font-semibold text-primary-700">
@@ -136,45 +156,45 @@
           </label>
           <div class="grid grid-cols-2 gap-2">
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.roastLevel.light') }}</span>
               <input
                 type="radio"
                 value="light"
                 v-model="coffeeInfo.roastLevel"
-                class="radio radio-secondary"
+                class="radio radio-secondary radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.roastLevel.light') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.roastLevel.medium') }}</span>
               <input
                 type="radio"
                 value="medium"
                 v-model="coffeeInfo.roastLevel"
-                class="radio radio-secondary"
+                class="radio radio-secondary radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.roastLevel.medium') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.roastLevel.mediumDark') }}</span>
               <input
                 type="radio"
                 value="mediumDark"
                 v-model="coffeeInfo.roastLevel"
-                class="radio radio-secondary"
+                class="radio radio-secondary radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.roastLevel.mediumDark') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.roastLevel.dark') }}</span>
               <input
                 type="radio"
                 value="dark"
                 v-model="coffeeInfo.roastLevel"
-                class="radio radio-secondary"
+                class="radio radio-secondary radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.roastLevel.dark') }}</span>
             </label>
           </div>
         </div>
 
-        <!-- 5. Método de preparación -->
+        <!-- 6. Método de preparación -->
         <div class="form-control">
           <label class="label">
             <span class="label-text font-semibold text-primary-700">
@@ -183,63 +203,63 @@
           </label>
           <div class="grid grid-cols-2 gap-2">
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.v60') }}</span>
               <input
                 type="radio"
                 value="v60"
                 v-model="coffeeInfo.brewingMethod"
-                class="radio radio-accent"
+                class="radio radio-accent radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.v60') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.chemex') }}</span>
               <input
                 type="radio"
                 value="chemex"
                 v-model="coffeeInfo.brewingMethod"
-                class="radio radio-accent"
+                class="radio radio-accent radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.chemex') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.espresso') }}</span>
               <input
                 type="radio"
                 value="espresso"
                 v-model="coffeeInfo.brewingMethod"
-                class="radio radio-accent"
+                class="radio radio-accent radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.espresso') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.aeropress') }}</span>
               <input
                 type="radio"
                 value="aeropress"
                 v-model="coffeeInfo.brewingMethod"
-                class="radio radio-accent"
+                class="radio radio-accent radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.aeropress') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.frenchPress') }}</span>
               <input
                 type="radio"
                 value="frenchPress"
                 v-model="coffeeInfo.brewingMethod"
-                class="radio radio-accent"
+                class="radio radio-accent radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.frenchPress') }}</span>
             </label>
             <label class="label cursor-pointer">
-              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.cupping') }}</span>
               <input
                 type="radio"
                 value="cupping"
                 v-model="coffeeInfo.brewingMethod"
-                class="radio radio-accent"
+                class="radio radio-accent radio-xs"
               />
+              <span class="label-text">{{ $t('coffeeInfo.brewingMethod.cupping') }}</span>
             </label>
           </div>
         </div>
 
-        <!-- 6. Fecha de tueste -->
+        <!-- 7. Fecha de tueste -->
         <div class="form-control">
           <label class="label">
             <span class="label-text font-semibold text-primary-700">

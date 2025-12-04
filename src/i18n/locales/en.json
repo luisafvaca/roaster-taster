@@ -229,6 +229,35 @@
       "other": "Other",
       "otherPlaceholder": "Enter the country"
     },
+    "altitude": {
+      "label": "At what altitude is it grown?",
+      "placeholder": "Select a range",
+      "unit": "m.a.s.l.",
+      "ranges": {
+        "veryHigh": "1500+ m.a.s.l.",
+        "high": "1200-1499 m.a.s.l.",
+        "medium": "900-1199 m.a.s.l.",
+        "low": "500-899 m.a.s.l.",
+        "veryLow": "<500 m.a.s.l."
+      },
+      "categories": {
+        "veryHigh": {
+          "description": "Slow maturation due to cold climate. Denser bean. Higher concentration of sugars and acids. Bright acidity (citric/fruity), complex flavors (floral, fruity), light to medium body."
+        },
+        "high": {
+          "description": "Slow maturation due to cold climate. Denser bean. Higher concentration of sugars and acids. Bright acidity (citric/fruity), complex flavors (floral, fruity), light to medium body."
+        },
+        "medium": {
+          "description": "Requires cooler and more stable climate. Higher quality, finer and more aromatic flavor."
+        },
+        "low": {
+          "description": "Fast maturation. Less dense bean. Fewer sugars and acids. Low or soft acidity, flatter flavors, neutral or \"roasted\" notes, heavier body."
+        },
+        "veryLow": {
+          "description": "Grows faster, tolerates more heat and humidity. More rustic, bitter taste, less acidic, high in caffeine."
+        }
+      }
+    },
     "variety": {
       "label": "What variety is it?",
       "placeholder": "Select a variety",

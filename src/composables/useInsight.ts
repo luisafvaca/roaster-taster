@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n'
 import type { Scores } from './useCalculator'
 import { useCoffeeInfo } from './useCoffeeInfo'
 import { useStats } from './useStats'
+import { useCoffeeCharacteristics } from './useCoffeeCharacteristics'
 
 // Definición de tipo para las estadísticas de atributos
 type AttributeKey = keyof Omit<
@@ -19,6 +20,12 @@ export function useInsight(scores: { value: Scores }) {
   const { t } = useI18n()
   const { coffeeInfo } = useCoffeeInfo()
   const { strongestAttribute, weakestAttribute, balance } = useStats(scores)
+  const {
+    getOriginCharacteristics,
+    getVarietyCharacteristics,
+    getProcessEffect,
+    getRoastLevelEffect,
+  } = useCoffeeCharacteristics()
 
   // --- Funciones de descripción (No cambiadas, son sólidas) ---
 
@@ -87,88 +94,7 @@ export function useInsight(scores: { value: Scores }) {
     return t('insight.method.versatile')
   }
 
-  // --- Funciones de Contexto de Café (No cambiadas) ---
-
-  const getOriginCharacteristics = (): string => {
-    const origin = coffeeInfo.origin === 'other' ? coffeeInfo.originOther : coffeeInfo.origin
-    if (!origin) return ''
-
-    const originLower = origin.toLowerCase()
-    if (originLower.includes('colombia')) {
-      return t('insight.coffeeContext.origin.colombia')
-    }
-    if (originLower.includes('etiopía') || originLower.includes('ethiopia')) {
-      return t('insight.coffeeContext.origin.ethiopia')
-    }
-    if (originLower.includes('brasil') || originLower.includes('brazil')) {
-      return t('insight.coffeeContext.origin.brazil')
-    }
-    if (originLower.includes('costa rica') || originLower.includes('costarica')) {
-      return t('insight.coffeeContext.origin.costaRica')
-    }
-    if (originLower.includes('guatemala')) {
-      return t('insight.coffeeContext.origin.guatemala')
-    }
-    if (originLower.includes('kenia') || originLower.includes('kenya')) {
-      return t('insight.coffeeContext.origin.kenya')
-    }
-    if (originLower.includes('perú') || originLower.includes('peru')) {
-      return t('insight.coffeeContext.origin.peru')
-    }
-    return ''
-  }
-
-  const getVarietyCharacteristics = (): string => {
-    const variety = coffeeInfo.variety === 'other' ? coffeeInfo.varietyOther : coffeeInfo.variety
-    if (!variety || !variety.trim()) return ''
-
-    const varietyLower = variety.toLowerCase().replace(/\s+/g, '')
-
-    // Mapeo de variedades a claves de traducción
-    const varietyMap: Record<string, string> = {
-      caturra: 'caturra',
-      bourbon: 'bourbon',
-      typica: 'typica',
-      geisha: 'geisha',
-      gesha: 'geisha',
-      mundonovo: 'mundoNovo',
-      catuai: 'catuai',
-      pacamara: 'pacamara',
-      maragogype: 'maragogype',
-      sl28: 'sl28',
-      sl34: 'sl34',
-      ruiru11: 'ruiru11',
-      ruiru: 'ruiru11',
-      ethiopianheirloom: 'ethiopianHeirloom',
-      heirloom: 'ethiopianHeirloom',
-      sidamo: 'sidamo',
-      yirgacheffe: 'yirgacheffe',
-      harrar: 'harrar',
-      java: 'java',
-      sumatra: 'sumatra',
-      sulawesi: 'sulawesi',
-      bluemountain: 'blueMountain',
-      villasarche: 'villaSarchi',
-      villasarchi: 'villaSarchi',
-    }
-
-    const varietyKey = varietyMap[varietyLower]
-    if (varietyKey) {
-      return t(`insight.coffeeContext.variety.${varietyKey}`)
-    }
-
-    return ''
-  }
-
-  const getProcessEffect = (): string => {
-    if (!coffeeInfo.process) return ''
-    return t(`insight.coffeeContext.process.${coffeeInfo.process}`)
-  }
-
-  const getRoastLevelEffect = (): string => {
-    if (!coffeeInfo.roastLevel) return ''
-    return t(`insight.coffeeContext.roastLevel.${coffeeInfo.roastLevel}`)
-  }
+  // --- Funciones de Contexto de Café (importadas desde useCoffeeCharacteristics) ---
 
   const getProcessText = (): string => {
     if (!coffeeInfo.process) return t('insight.unknownProcess')
@@ -207,19 +133,6 @@ export function useInsight(scores: { value: Scores }) {
     }
     return ''
   }
-
-  const hasCoffeeInfo = (): boolean => {
-    return !!(
-      coffeeInfo.origin ||
-      coffeeInfo.variety ||
-      coffeeInfo.process ||
-      coffeeInfo.roastLevel ||
-      coffeeInfo.brewingMethod ||
-      coffeeInfo.roastDate !== null
-    )
-  }
-
-  // --- Funciones de Atributos Refactorizadas (Retornan key/label para uso flexible) ---
 
   const getAttributesStats = (scores: Scores): AttributeStat[] => {
     return (

@@ -230,6 +230,35 @@
       "other": "Otro",
       "otherPlaceholder": "Escribe el país"
     },
+    "altitude": {
+      "label": "¿A qué altitud se cultiva?",
+      "placeholder": "Selecciona un rango",
+      "unit": "m.s.n.m.",
+      "ranges": {
+        "veryHigh": "1500+ m.s.n.m.",
+        "high": "1200-1499 m.s.n.m.",
+        "medium": "900-1199 m.s.n.m.",
+        "low": "500-899 m.s.n.m.",
+        "veryLow": "<500 m.s.n.m."
+      },
+      "categories": {
+        "veryHigh": {
+          "description": "Maduración lenta por clima frío. Grano más denso. Mayor concentración de azúcares y ácidos. Acidez brillante (cítrica/frutal), sabores complejos (floral, frutal), cuerpo ligero a medio."
+        },
+        "high": {
+          "description": "Maduración lenta por clima frío. Grano más denso. Mayor concentración de azúcares y ácidos. Acidez brillante (cítrica/frutal), sabores complejos (floral, frutal), cuerpo ligero a medio."
+        },
+        "medium": {
+          "description": "Requiere clima más fresco y estable. Sabor de mayor calidad, más fino y aromático."
+        },
+        "low": {
+          "description": "Maduración rápida. Grano menos denso. Menos azúcares y ácidos. Acidez baja o suave, sabores más planos, neutros o \"tostados\", cuerpo más pesado."
+        },
+        "veryLow": {
+          "description": "Crece más rápido, tolera más calor y humedad. Sabor más rústico, amargo, menos ácido, alto en cafeína."
+        }
+      }
+    },
     "variety": {
       "label": "¿Qué variedad es?",
       "placeholder": "Selecciona una variedad",
