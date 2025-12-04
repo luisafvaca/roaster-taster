@@ -1,11 +1,9 @@
 {
   "app": {
-    "title": "Calcolatore del Punteggio Affettivo del Caffè",
-    "subtitle": "SCA Coffee Value Assessment"
+    "title": "Calcolatore del Punteggio Affettivo del Caffè"
   },
   "calculator": {
     "impressionOfQuality": "Parametri di Valutazione",
-    "evaluationScale": "Scala di valutazione",
     "fragrance": "Profumo",
     "aroma": "Aroma",
     "flavor": "Sapore",
@@ -53,21 +51,6 @@
       "medium": "retrogusto medio",
       "short": "retrogusto corto",
       "veryShort": "retrogusto molto corto"
-    },
-    "aroma": {
-      "intense": "aroma intenso",
-      "moderate": "aroma moderato",
-      "soft": "aroma delicato"
-    },
-    "flavor": {
-      "complex": "sapore complesso",
-      "balanced": "sapore bilanciato",
-      "simple": "sapore semplice"
-    },
-    "mouthfeel": {
-      "full": "corpo pieno",
-      "medium": "corpo medio",
-      "light": "corpo leggero"
     },
     "interpretation": {
       "highQuality": "un profilo di alta qualità",
@@ -130,7 +113,6 @@
       },
       "roastDate": {
         "veryFresh": "Può essere molto fresco, sviluppo incompleto dell'aroma.",
-        "optimal": "Al punto ottimale di sviluppo.",
         "aging": "Aroma e corpo possono iniziare a degradarsi.",
         "ranges": {
           "0-3": {
@@ -161,12 +143,9 @@
         "both": "Le penalizzazioni e i difetti rilevati riducono l'uniformità e la pulizia del profilo, indicando possibili inconsistenze nella macinazione o nella tostatura."
       }
     },
-    "unknownOrigin": "origine sconosciuta",
     "unknownProcess": "processo non specificato",
     "unknownRoastLevel": "livello di tostatura non specificato",
-    "balancedProfile": "profilo bilanciato",
     "methodNote": {
-      "idealFor": "Ideale per {method}.",
       "v60": "evidenzia la chiarezza, l'acidità brillante e le note floreali",
       "chemex": "accentua una pulizia estrema e una dolcezza morbida, riducendo leggermente il corpo",
       "espresso": "intensifica il corpo, la concentrazione aromatica e l'intensità generale",
@@ -174,19 +153,8 @@
       "frenchPress": "enfatizza il corpo, la texture e le note più profonde",
       "cupping": "mostra il profilo puro del caffè senza interferenze, evidenziando attributi e difetti"
     },
-    "balance": {
-      "interpretation": {
-        "balanced": "un profilo bilanciato",
-        "expressive": "un profilo più espressivo ma meno uniforme"
-      }
-    },
     "sections": {
-      "origin": "Caffè di {origin}, conosciuto per {characteristics}",
-      "variety": "varietà {variety}, apprezzata per {characteristics}",
-      "processRoast": "Processato mediante {process}, che contribuisce {processEffect}, e tostato a un livello {roastLevel}, che {roastEffect}",
-      "strengths": "Si distingue per {attributes}, che definiscono gran parte del suo carattere sensoriale",
       "weakness": "Il {attribute} è il punto più sottile, che può suggerire {interpretation}",
-      "method": "Preparato con {method}, questo metodo tende a {methodEffect}, complementando le sue caratteristiche naturali",
       "weaknessInterpretation": {
         "fragrance": "un profilo meno aromatico all'inizio",
         "aroma": "minore intensità aromatica",
@@ -221,9 +189,12 @@
   "coffeeInfo": {
     "sectionTitle": "Informazioni del Caffè",
     "modalTitle": "Informazioni del Caffè",
-    "modalSubtitle": "Completa questi dati per migliorare l'analisi",
+    "cuppingDate": {
+      "label": "Data di degustazione",
+      "placeholder": "Seleziona una data"
+    },
     "origin": {
-      "label": "Da quale paese proviene il caffè?",
+      "label": "Qual è l'origine?",
       "placeholder": "Seleziona un paese",
       "other": "Altro",
       "otherPlaceholder": "Inserisci il paese"
@@ -231,7 +202,6 @@
     "altitude": {
       "label": "A quale altitudine viene coltivato?",
       "placeholder": "Seleziona un intervallo",
-      "unit": "m.s.l.m.",
       "ranges": {
         "veryHigh": "1500+ m.s.l.m.",
         "high": "1200-1499 m.s.l.m.",

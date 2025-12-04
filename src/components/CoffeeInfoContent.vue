@@ -1,6 +1,6 @@
 <template>
   <ul class="space-y-2 text-primary-500 grid grid-cols-2 gap-2">
-    <li v-if="originInfo" class="flex flex-col items-start">
+    <li v-if="originInfo" class="flex flex-col items-start mb-2">
       <span class="font-semibold mr-2">{{ $t('coffeeInfo.origin.label') }}:</span>
       <span class="flex items-center gap-1">
         {{ originInfo.name }}
@@ -22,7 +22,7 @@
         </div>
       </span>
     </li>
-    <li v-if="altitudeInfo" class="flex flex-col items-start">
+    <li v-if="altitudeInfo" class="flex flex-col items-start mb-2">
       <span class="font-semibold mr-2">{{ $t('coffeeInfo.altitude.label') }}:</span>
       <span class="flex items-center gap-1">
         {{ altitudeInfo.name }}
@@ -48,7 +48,7 @@
         </div>
       </span>
     </li>
-    <li v-if="varietyInfo" class="flex flex-col items-start">
+    <li v-if="varietyInfo" class="flex flex-col items-start mb-2">
       <span class="font-semibold mr-2">{{ $t('coffeeInfo.variety.label') }}:</span>
       <span class="flex items-center gap-1">
         {{ varietyInfo.name }}
@@ -74,7 +74,7 @@
         </div>
       </span>
     </li>
-    <li v-if="processInfo" class="flex flex-col items-start">
+    <li v-if="processInfo" class="flex flex-col items-start mb-2">
       <span class="font-semibold mr-2">{{ $t('coffeeInfo.process.label') }}:</span>
       <span class="flex items-center gap-1">
         {{ processInfo.name }}
@@ -100,7 +100,7 @@
         </div>
       </span>
     </li>
-    <li v-if="roastLevelInfo" class="flex flex-col items-start">
+    <li v-if="roastLevelInfo" class="flex flex-col items-start mb-2">
       <span class="font-semibold mr-2">{{ $t('coffeeInfo.roastLevel.label') }}:</span>
       <span class="flex items-center gap-1">
         {{ roastLevelInfo.name }}
@@ -126,7 +126,7 @@
         </div>
       </span>
     </li>
-    <li v-if="brewingMethodInfo" class="flex flex-col items-start">
+    <li v-if="brewingMethodInfo" class="flex flex-col items-start mb-2">
       <span class="font-semibold mr-2">{{ $t('coffeeInfo.brewingMethod.label') }}:</span>
       <span class="flex items-center gap-1">
         {{ brewingMethodInfo.name }}
@@ -152,7 +152,7 @@
         </div>
       </span>
     </li>
-    <li v-if="roastDateInfo" class="flex flex-col items-start">
+    <li v-if="roastDateInfo" class="flex flex-col items-start mb-2">
       <span class="font-semibold mr-2">{{ $t('coffeeInfo.roastDate.label') }}:</span>
       <span class="flex items-center gap-1">
         {{ roastDateInfo.name }}

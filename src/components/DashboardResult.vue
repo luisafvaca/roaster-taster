@@ -2,17 +2,17 @@
   <div class="mt-8">
     <div class="mx-auto max-w-4xl">
       <div class="card-body">
+        <CoffeeInfoSection />
+      </div>
+    </div>
+    <div class="mx-auto max-w-4xl">
+      <div class="card-body">
         <InsightSection :scores="scores" />
       </div>
     </div>
     <div class="mx-auto max-w-4xl">
       <div class="card-body">
         <StatsSection :scores="scores" />
-      </div>
-    </div>
-    <div class="mx-auto max-w-4xl">
-      <div class="card-body">
-        <CoffeeInfoSection />
       </div>
     </div>
     <div class="card mx-auto max-w-4xl">

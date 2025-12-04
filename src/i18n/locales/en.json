@@ -1,11 +1,9 @@
 {
   "app": {
-    "title": "Coffee Affective Score Calculator",
-    "subtitle": "SCA Coffee Value Assessment"
+    "title": "Coffee Affective Score Calculator"
   },
   "calculator": {
     "impressionOfQuality": "Evaluation Parameters",
-    "evaluationScale": "Evaluation scale",
     "fragrance": "Fragrance",
     "aroma": "Aroma",
     "flavor": "Flavor",
@@ -53,21 +51,6 @@
       "medium": "medium aftertaste",
       "short": "short aftertaste",
       "veryShort": "very short aftertaste"
-    },
-    "aroma": {
-      "intense": "intense aroma",
-      "moderate": "moderate aroma",
-      "soft": "soft aroma"
-    },
-    "flavor": {
-      "complex": "complex flavor",
-      "balanced": "balanced flavor",
-      "simple": "simple flavor"
-    },
-    "mouthfeel": {
-      "full": "full body",
-      "medium": "medium body",
-      "light": "light body"
     },
     "interpretation": {
       "highQuality": "a high-quality profile",
@@ -130,7 +113,6 @@
       },
       "roastDate": {
         "veryFresh": "May be very fresh, incomplete aroma development.",
-        "optimal": "At optimal development point.",
         "aging": "Aroma and body may be starting to degrade.",
         "ranges": {
           "0-3": {
@@ -161,13 +143,9 @@
         "both": "Penalties and detected defects reduce the profile's uniformity and cleanliness, indicating possible inconsistencies in grinding or roasting."
       }
     },
-    "templateWithContext": "Coffee from {origin}, {altitudeInfo}with a {process} process with a {roastLevel} roast level. {roastDateInfo}Highlighted by {strongestPoint} and {acidity}. {fragrance}, but the {aftertaste}, which indicates {interpretation}. {methodNote}{penaltiesNote}",
-    "unknownOrigin": "unknown origin",
     "unknownProcess": "unspecified process",
     "unknownRoastLevel": "unspecified roast level",
-    "balancedProfile": "balanced profile",
     "methodNote": {
-      "idealFor": "Ideal for {method}.",
       "v60": "highlights clarity, bright acidity, and floral notes",
       "chemex": "accentuates extreme cleanliness and soft sweetness, slightly reducing body",
       "espresso": "intensifies body, aromatic concentration, and overall intensity",
@@ -175,19 +153,8 @@
       "frenchPress": "emphasizes body, texture, and the deeper notes",
       "cupping": "shows the pure profile of the coffee without interference, highlighting attributes and defects"
     },
-    "balance": {
-      "interpretation": {
-        "balanced": "a balanced profile",
-        "expressive": "a more expressive but less uniform profile"
-      }
-    },
     "sections": {
-      "origin": "Coffee from {origin}, known for {characteristics}",
-      "variety": "variety {variety}, appreciated for {characteristics}",
-      "processRoast": "Processed using {process}, which contributes {processEffect}, and roasted to a {roastLevel} level, which {roastEffect}",
-      "strengths": "It stands out for {attributes}, which define much of its sensory character",
       "weakness": "The {attribute} is the most subtle point, which may suggest {interpretation}",
-      "method": "Prepared with {method}, this method tends to {methodEffect}, complementing its natural characteristics",
       "weaknessInterpretation": {
         "fragrance": "a less aromatic profile at the start",
         "aroma": "lower aromatic intensity",
@@ -222,9 +189,12 @@
   "coffeeInfo": {
     "sectionTitle": "Coffee Information",
     "modalTitle": "Coffee Information",
-    "modalSubtitle": "Complete this data to improve the analysis",
+    "cuppingDate": {
+      "label": "Cupping date",
+      "placeholder": "Select a date"
+    },
     "origin": {
-      "label": "What country is the coffee from?",
+      "label": "What is the origin?",
       "placeholder": "Select a country",
       "other": "Other",
       "otherPlaceholder": "Enter the country"
@@ -232,7 +202,6 @@
     "altitude": {
       "label": "At what altitude is it grown?",
       "placeholder": "Select a range",
-      "unit": "m.a.s.l.",
       "ranges": {
         "veryHigh": "1500+ m.a.s.l.",
         "high": "1200-1499 m.a.s.l.",

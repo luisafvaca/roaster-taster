@@ -1,11 +1,9 @@
 {
   "app": {
-    "title": "Calculadora de Puntuación Afectiva de Café",
-    "subtitle": "SCA Coffee Value Assessment"
+    "title": "Calculadora de Puntuación Afectiva de Café"
   },
   "calculator": {
     "impressionOfQuality": "Parámetros de evaluación",
-    "evaluationScale": "Escala de evaluación",
     "fragrance": "Fragancia",
     "aroma": "Aroma",
     "flavor": "Sabor",
@@ -14,7 +12,7 @@
     "sweetness": "Dulzor",
     "mouthfeel": "Cuerpo",
     "overall": "General",
-    "penalizations": "PENALIZACIONES",
+    "penalizations": "Penalizaciones",
     "nonUniformCups": "Número de Tazas No Uniformes",
     "defectiveCups": "Número de Tazas Defectuosas",
     "affectiveScore": "Puntuación Afectiva"
@@ -53,21 +51,6 @@
       "medium": "regusto medio",
       "short": "regusto corto",
       "veryShort": "regusto muy corto"
-    },
-    "aroma": {
-      "intense": "aroma intenso",
-      "moderate": "aroma moderado",
-      "soft": "aroma suave"
-    },
-    "flavor": {
-      "complex": "sabor complejo",
-      "balanced": "sabor balanceado",
-      "simple": "sabor simple"
-    },
-    "mouthfeel": {
-      "full": "cuerpo completo",
-      "medium": "cuerpo medio",
-      "light": "cuerpo ligero"
     },
     "interpretation": {
       "highQuality": "un perfil de alta calidad",
@@ -130,7 +113,6 @@
       },
       "roastDate": {
         "veryFresh": "Advertencia: El café podría estar muy fresco (menos de 3 días) lo que puede limitar el desarrollo completo del aroma.",
-        "optimal": "El café está en un punto óptimo de desarrollo.",
         "aging": "Advertencia: El aroma y cuerpo pueden estar empezando a degradarse (más de 30 días).",
         "ranges": {
           "0-3": {
@@ -161,13 +143,9 @@
         "both": "Las penalizaciones y defectos detectados reducen la uniformidad y limpieza del perfil, indicando posibles inconsistencias en la molienda o en el tueste."
       }
     },
-    "templateWithContext": "Café de {origin}, {altitudeInfo}con un proceso {process} con un nivel de tueste {roastLevel}. {roastDateInfo}Destacado por {strongestPoint} y {acidity}. {fragrance}, pero el {aftertaste}, lo que indica {interpretation}. {methodNote}{penaltiesNote}",
-    "unknownOrigin": "origen desconocido",
     "unknownProcess": "proceso no especificado",
     "unknownRoastLevel": "nivel de tueste no especificado",
-    "balancedProfile": "perfil balanceado",
     "methodNote": {
-      "idealFor": "Ideal para {method}.",
       "v60": "resalta la claridad, la acidez brillante y las notas florales",
       "chemex": "acentua una limpieza extrema y un dulzor suave, reduciendo un poco el cuerpo",
       "espresso": "intensifica el cuerpo, la concentración aromática y la intensidad general",
@@ -175,20 +153,8 @@
       "frenchPress": "enfatiza en el cuerpo, la textura y las notas más profundas",
       "cupping": "muestra el perfil puro del café sin interferencias, destacando atributos y defectos"
     },
-    "balance": {
-      "interpretation": {
-        "balanced": "un perfil balanceado",
-        "expressive": "un perfil más expresivo pero menos uniforme"
-      }
-    },
     "sections": {
-      "origin": "Café de {origin}, conocido por {characteristics}",
-      "variety": "de variedad {variety}, apreciada por {characteristics}",
-      "processDetail": "procesado mediante {process}",
-      "roastDetail": "tostado a un nivel {level}",
-      "strengths": "Se destaca por {attributes}, que definen gran parte de su carácter sensorial",
       "weakness": "La {attribute} es el punto más tenue, lo que puede sugerir {interpretation}",
-      "method": "Preparado con {method}, este método tiende a {methodEffect}, complementando sus características naturales",
       "weaknessInterpretation": {
         "fragrance": "una menor expresión aromática en seco (antes de mojar)",
         "aroma": "una menor intensidad en la complejidad aromática",
@@ -223,9 +189,12 @@
   "coffeeInfo": {
     "sectionTitle": "Información del Café",
     "modalTitle": "Información del Café",
-    "modalSubtitle": "Completa estos datos para mejorar el análisis",
+    "cuppingDate": {
+      "label": "Fecha de cata",
+      "placeholder": "Selecciona una fecha"
+    },
     "origin": {
-      "label": "¿De qué país es el café?",
+      "label": "¿Cuál es el origen?",
       "placeholder": "Selecciona un país",
       "other": "Otro",
       "otherPlaceholder": "Escribe el país"
@@ -233,7 +202,6 @@
     "altitude": {
       "label": "¿A qué altitud se cultiva?",
       "placeholder": "Selecciona un rango",
-      "unit": "m.s.n.m.",
       "ranges": {
         "veryHigh": "1500+ m.s.n.m.",
         "high": "1200-1499 m.s.n.m.",

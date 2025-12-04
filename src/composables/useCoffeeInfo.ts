@@ -1,6 +1,7 @@
 import { ref, reactive, watch } from 'vue'
 
 export interface CoffeeInfo {
+  cuppingDate: string
   origin: string
   originOther: string
   altitude: string
@@ -13,6 +14,7 @@ export interface CoffeeInfo {
 }
 
 const coffeeInfo = reactive<CoffeeInfo>({
+  cuppingDate: '',
   origin: '',
   originOther: '',
   altitude: '',
@@ -52,6 +54,7 @@ export function useCoffeeInfo() {
   }
 
   const resetCoffeeInfo = () => {
+    coffeeInfo.cuppingDate = ''
     coffeeInfo.origin = ''
     coffeeInfo.originOther = ''
     coffeeInfo.altitude = ''
