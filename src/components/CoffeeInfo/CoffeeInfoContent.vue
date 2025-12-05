@@ -115,8 +115,24 @@ const brewingMethodInfo = computed(() => {
 
 const roastDateInfo = computed(() => getRoastDateInfo())
 
+const cuppingDateInfo = computed(() => {
+  if (!coffeeInfo.cuppingDate) return null
+
+  const date = new Date(coffeeInfo.cuppingDate)
+  const formattedDate = date.toLocaleDateString()
+
+  return {
+    name: formattedDate,
+    tooltip: null,
+  }
+})
+
 const coffeeInfoItems = computed(() => {
   const items = [
+    {
+      labelKey: 'coffeeInfo.cuppingDate.label',
+      info: cuppingDateInfo.value,
+    },
     {
       labelKey: 'coffeeInfo.origin.label',
       info: originInfo.value,

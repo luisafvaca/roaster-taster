@@ -186,6 +186,9 @@
     "nonUniformCup": "Non-uniform cup",
     "defectiveCup": "Defective cup"
   },
+  "dashboard": {
+    "print": "Print"
+  },
   "coffeeInfo": {
     "sectionTitle": "Coffee Information",
     "modalTitle": "Coffee Information",
