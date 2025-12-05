@@ -1,5 +1,5 @@
 <template>
-  <ul class="space-y-2 text-primary-500 grid grid-cols-2 gap-2">
+  <ul class="space-y-2 text-primary-500 grid grid-cols-1 md:grid-cols-2 gap-2">
     <li v-for="item in coffeeInfoItems" :key="item.labelKey" class="flex flex-col items-start mb-2">
       <span class="font-semibold mr-2">{{ $t(item.labelKey) }}:</span>
       <span class="flex items-center gap-1">
