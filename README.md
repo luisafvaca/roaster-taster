@@ -380,6 +380,38 @@ yarn dev
 yarn build
 ```
 
+## 🚀 Deployment to GitHub Pages
+
+The project is configured to automatically deploy to GitHub Pages when you push to the `main` branch.
+
+### Setup Instructions
+
+1. **Enable GitHub Pages** in your repository settings:
+   - Go to Settings → Pages
+   - Source: Select "GitHub Actions"
+
+2. **Push to main branch**: The workflow will automatically:
+   - Build the project
+   - Deploy to GitHub Pages
+   - The site will be available at: `https://luisafvaca.github.io/roaster-taster/`
+
+### Manual Deployment
+
+You can also trigger the deployment manually:
+
+- Go to Actions tab in GitHub
+- Select "Deploy to GitHub Pages" workflow
+- Click "Run workflow"
+
+### Local Build for Testing
+
+To test the production build locally:
+
+```sh
+yarn build
+yarn preview
+```
+
 ## 🧪 Testing
 
 ```sh
