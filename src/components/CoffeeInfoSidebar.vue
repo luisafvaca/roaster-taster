@@ -23,7 +23,7 @@
         </button>
       </div>
       <div class="space-y-6">
-        <CuppingDateInput />
+        <CuppingDateSelector />
         <OriginSelector />
         <AltitudeSelector />
         <VarietySelector />
@@ -32,7 +32,6 @@
         <BrewingMethodSelector />
         <RoastDateInput />
 
-        <!-- Botones -->
         <div class="flex gap-3 pt-4">
           <button
             @click="closeSidebar"
@@ -54,7 +53,7 @@
 
 <script setup lang="ts">
 import { useCoffeeInfo } from '../composables/useCoffeeInfo'
-import CuppingDateInput from './CuppingDateInput.vue'
+import CuppingDateSelector from './CuppingDateSelector.vue'
 import OriginSelector from './OriginSelector.vue'
 import AltitudeSelector from './AltitudeSelector.vue'
 import VarietySelector from './VarietySelector.vue'

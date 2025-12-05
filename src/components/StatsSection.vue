@@ -1,90 +1,17 @@
 <template>
   <div class="w-full">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <!-- Mayor Fortaleza -->
-      <div class="stat bg-primary-100 rounded-lg shadow flex flex-col items-center p-6">
-        <div class="stat-title text-primary-500 mb-2">{{ $t('stats.strongest') }}</div>
-        <div
-          class="radial-progress text-secondary-600"
-          :style="{
-            '--value': strongestPercentage,
-            '--size': '8rem',
-            '--thickness': '8px',
-          }"
-          :aria-valuenow="strongestPercentage"
-          role="progressbar"
-        >
-          {{ allEqual ? '–' : strongestAttribute?.value.toFixed(1) || '0.0' }}
-        </div>
-        <div class="stat-desc text-primary-600 font-semibold mt-2 text-center">
-          {{
-            allEqual
-              ? $t('stats.uniformAttributes')
-              : $t(strongestAttribute?.label || 'calculator.overall')
-          }}
-        </div>
-      </div>
-
-      <!-- Punto Débil -->
-      <div class="stat bg-primary-100 rounded-lg shadow flex flex-col items-center p-6">
-        <div class="stat-title text-primary-500 mb-2">{{ $t('stats.weakest') }}</div>
-        <div
-          class="radial-progress text-error-600"
-          :style="{
-            '--value': weakestPercentage,
-            '--size': '8rem',
-            '--thickness': '8px',
-          }"
-          :aria-valuenow="weakestPercentage"
-          role="progressbar"
-        >
-          {{ allEqual ? '–' : weakestAttribute?.value.toFixed(1) || '0.0' }}
-        </div>
-        <div class="stat-desc text-primary-600 font-semibold mt-2 text-center">
-          {{
-            allEqual
-              ? $t('stats.uniformProfile')
-              : $t(weakestAttribute?.label || 'calculator.overall')
-          }}
-        </div>
-      </div>
-
-      <!-- Balance General -->
-      <div class="stat bg-primary-100 rounded-lg shadow flex flex-col items-center p-6">
-        <div class="stat-title text-primary-500 mb-2">{{ $t('stats.balance') }}</div>
-        <div
-          :class="[
-            'radial-progress',
-            balance.level === 'balanced'
-              ? 'text-success-600'
-              : balance.level === 'moderatelyBalanced'
-                ? 'text-warning-600'
-                : 'text-error-600',
-          ]"
-          :style="{
-            '--value': balancePercentage,
-            '--size': '8rem',
-            '--thickness': '8px',
-          }"
-          :aria-valuenow="balancePercentage"
-          role="progressbar"
-        >
-          {{ balancePercentage.toFixed(0) }}%
-        </div>
-        <div
-          :class="[
-            'stat-desc font-semibold mt-2 text-center',
-            balance.level === 'balanced'
-              ? 'text-success-600'
-              : balance.level === 'moderatelyBalanced'
-                ? 'text-warning-600'
-                : 'text-error-600',
-          ]"
-        >
-          {{ $t(balance.levelKey) }}
-        </div>
-        <div class="text-xs text-primary-600 mt-1">σ: {{ balance.stdDev.toFixed(2) }}</div>
-      </div>
+      <StrongestStat
+        :attribute="strongestAttribute || null"
+        :percentage="strongestPercentage"
+        :all-equal="allEqual"
+      />
+      <WeakestStat
+        :attribute="weakestAttribute || null"
+        :percentage="weakestPercentage"
+        :all-equal="allEqual"
+      />
+      <BalanceStat :balance="balance" :percentage="balancePercentage" />
     </div>
   </div>
 </template>
@@ -93,6 +20,9 @@
 import { computed } from 'vue'
 import { useStats } from '../composables/useStats'
 import type { Scores } from '../composables/useCalculator'
+import StrongestStat from './StrongestStat.vue'
+import WeakestStat from './WeakestStat.vue'
+import BalanceStat from './BalanceStat.vue'
 
 const props = defineProps<{
   scores: Scores

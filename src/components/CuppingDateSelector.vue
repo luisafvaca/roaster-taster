@@ -8,7 +8,7 @@
     <button
       :id="buttonId"
       popovertarget="cally-popover"
-      class="input input-bordered w-full bg-base-100 border-primary-300 focus:border-primary-500 focus:outline-primary-500 text-left"
+      class="input input-bordered w-full border-primary-300 focus:border-primary-500 focus:outline-primary-500 text-left"
       :style="{ anchorName: `--${buttonId}` }"
     >
       {{ displayDate || $t('coffeeInfo.cuppingDate.placeholder') }}
@@ -16,10 +16,10 @@
     <div
       popover="auto"
       id="cally-popover"
-      class="dropdown bg-base-100 rounded-box shadow-lg border border-base-300"
+      class="dropdown rounded-box shadow-lg border border-base-300"
       :style="{ positionAnchor: `--${buttonId}` }"
     >
-      <calendar-date ref="calendarRef" class="cally" :value="coffeeInfo.cuppingDate">
+      <calendar-date ref="calendarRef" class="cally bg-primary-50" :value="coffeeInfo.cuppingDate">
         <calendar-month></calendar-month>
       </calendar-date>
     </div>
@@ -57,7 +57,6 @@ onMounted(() => {
   if (calendarRef.value) {
     calendarRef.value.addEventListener('change', handleDateChange)
 
-    // Agregar los iconos de navegación usando slots nativos
     const previousSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
     previousSvg.setAttribute('aria-label', 'Previous')
     previousSvg.setAttribute('class', 'fill-current size-4')
@@ -81,6 +80,70 @@ onMounted(() => {
     nextPath.setAttribute('d', 'm8.25 4.5 7.5 7.5-7.5 7.5')
     nextSvg.appendChild(nextPath)
     calendarRef.value.appendChild(nextSvg)
+
+    // Aplicar estilos al calendario
+    applyCalendarStyles()
   }
 })
+
+const applyCalendarStyles = () => {
+  // Usar MutationObserver para detectar cuando el calendario se renderiza
+  const observer = new MutationObserver(() => {
+    if (calendarRef.value) {
+      const calendar = calendarRef.value
+
+      // Buscar todos los días del calendario
+      const todayElements = calendar.querySelectorAll('[data-today], [aria-current="date"]')
+      const selectedElements = calendar.querySelectorAll('[data-selected], [aria-selected="true"]')
+
+      // Aplicar estilos al día actual
+      todayElements.forEach((el) => {
+        const element = el as HTMLElement
+        if (!element.hasAttribute('data-selected') && !element.getAttribute('aria-selected')) {
+          element.style.backgroundColor = 'var(--color-primary-50)'
+          element.style.color = 'var(--color-primary-700)'
+        }
+      })
+
+      // Aplicar estilos al día seleccionado
+      selectedElements.forEach((el) => {
+        const element = el as HTMLElement
+        element.style.backgroundColor = 'var(--color-primary-500)'
+        element.style.color = 'white'
+      })
+    }
+  })
+
+  if (calendarRef.value) {
+    observer.observe(calendarRef.value, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['data-today', 'data-selected', 'aria-current', 'aria-selected'],
+    })
+  }
+
+  // También aplicar estilos después de un pequeño delay para asegurar que el calendario esté renderizado
+  setTimeout(() => {
+    if (calendarRef.value) {
+      const calendar = calendarRef.value
+      const todayElements = calendar.querySelectorAll('[data-today], [aria-current="date"]')
+      const selectedElements = calendar.querySelectorAll('[data-selected], [aria-selected="true"]')
+
+      todayElements.forEach((el) => {
+        const element = el as HTMLElement
+        if (!element.hasAttribute('data-selected') && !element.getAttribute('aria-selected')) {
+          element.style.backgroundColor = 'var(--color-primary-50)'
+          element.style.color = 'var(--color-primary-700)'
+        }
+      })
+
+      selectedElements.forEach((el) => {
+        const element = el as HTMLElement
+        element.style.backgroundColor = 'var(--color-primary-500)'
+        element.style.color = 'white'
+      })
+    }
+  }, 200)
+}
 </script>
