@@ -41,7 +41,7 @@
                       max="9"
                       step="1"
                       variant="primary"
-                      size="xs"
+                      size="md"
                     />
                   </div>
                 </div>
