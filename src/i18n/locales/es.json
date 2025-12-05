@@ -186,6 +186,9 @@
     "nonUniformCup": "Taza no uniforme",
     "defectiveCup": "Taza defectuosa"
   },
+  "dashboard": {
+    "print": "Imprimir"
+  },
   "coffeeInfo": {
     "sectionTitle": "Información del Café",
     "modalTitle": "Información del Café",

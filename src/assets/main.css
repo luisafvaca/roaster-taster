@@ -280,3 +280,24 @@ body {
 .tooltip::after {
   border-top-color: var(--color-primary-500) !important;
 }
+
+@media print {
+  header,
+  nav,
+  .btn,
+  label[for='coffee-info-drawer'],
+  .drawer-side,
+  .drawer-overlay {
+    display: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

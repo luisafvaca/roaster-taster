@@ -186,6 +186,9 @@
     "nonUniformCup": "Xícara não uniforme",
     "defectiveCup": "Xícara defeituosa"
   },
+  "dashboard": {
+    "print": "Imprimir"
+  },
   "coffeeInfo": {
     "sectionTitle": "Informações do Café",
     "modalTitle": "Informações do Café",
