@@ -40,7 +40,7 @@ import PolarChart from './PolarChart.vue'
 import PenaltyBarChart from './PenaltyBarChart.vue'
 import InsightSection from './InsightSection.vue'
 import StatsSection from './StatsSection.vue'
-import CoffeeInfoSection from './CoffeeInfoSection.vue'
+import CoffeeInfoSection from './CoffeeInfo/CoffeeInfoSection.vue'
 
 defineProps<{
   scores: Scores

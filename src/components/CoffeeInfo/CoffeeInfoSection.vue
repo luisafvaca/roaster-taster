@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useCoffeeInfo } from '../composables/useCoffeeInfo'
+import { useCoffeeInfo } from '../../composables/useCoffeeInfo'
 import CoffeeInfoContent from './CoffeeInfoContent.vue'
 
 const { coffeeInfo } = useCoffeeInfo()
