@@ -10,7 +10,7 @@
               </h3>
 
               <div class="mb-4 p-4 bg-primary-100 rounded-lg">
-                <div class="grid grid-cols-3 gap-2 text-xs">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
                   <div>① {{ $t('scale.extremelyLow') }}</div>
                   <div>② {{ $t('scale.veryLow') }}</div>
                   <div>③ {{ $t('scale.moderatelyLow') }}</div>
@@ -71,7 +71,7 @@
                       max="5"
                       step="1"
                       variant="secondary"
-                      size="xs"
+                      size="md"
                     />
                   </div>
                 </div>
@@ -82,7 +82,7 @@
             <div class="mt-8">
               <div class="card bg-primary-500 text-white">
                 <div class="card-body">
-                  <div class="flex justify-between items-center">
+                  <div class="flex flex-col md:flex-row justify-between items-center">
                     <span class="text-2xl font-bold">{{ $t('calculator.affectiveScore') }}</span>
                     <span class="text-5xl font-bold text-secondary-500">
                       {{ affectiveScore.toFixed(2) }}

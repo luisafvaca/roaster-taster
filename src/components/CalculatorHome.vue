@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1
-      class="text-2xl font-bold text-primary-600 text-center mt-24 mb-4 sticky top-[70px] bg-base-100 z-3 py-4"
+      class="text-2xl font-bold text-primary-600 text-center mt-24 mb-4 sticky top-[70px] bg-base-100 z-3 p-4"
     >
       {{ $t('app.title') }}
     </h1>
