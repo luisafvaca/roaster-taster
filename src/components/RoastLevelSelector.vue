@@ -6,41 +6,14 @@
       </span>
     </label>
     <div class="grid grid-cols-2 gap-2">
-      <label class="label cursor-pointer">
+      <label v-for="option in roastLevelOptions" :key="option.value" class="label cursor-pointer">
         <input
           type="radio"
-          value="light"
+          :value="option.value"
           v-model="coffeeInfo.roastLevel"
           class="radio radio-secondary radio-xs"
         />
-        <span class="label-text">{{ $t('coffeeInfo.roastLevel.light') }}</span>
-      </label>
-      <label class="label cursor-pointer">
-        <input
-          type="radio"
-          value="medium"
-          v-model="coffeeInfo.roastLevel"
-          class="radio radio-secondary radio-xs"
-        />
-        <span class="label-text">{{ $t('coffeeInfo.roastLevel.medium') }}</span>
-      </label>
-      <label class="label cursor-pointer">
-        <input
-          type="radio"
-          value="mediumDark"
-          v-model="coffeeInfo.roastLevel"
-          class="radio radio-secondary radio-xs"
-        />
-        <span class="label-text">{{ $t('coffeeInfo.roastLevel.mediumDark') }}</span>
-      </label>
-      <label class="label cursor-pointer">
-        <input
-          type="radio"
-          value="dark"
-          v-model="coffeeInfo.roastLevel"
-          class="radio radio-secondary radio-xs"
-        />
-        <span class="label-text">{{ $t('coffeeInfo.roastLevel.dark') }}</span>
+        <span class="label-text">{{ $t(option.labelKey) }}</span>
       </label>
     </div>
   </div>
@@ -50,4 +23,11 @@
 import { useCoffeeInfo } from '../composables/useCoffeeInfo'
 
 const { coffeeInfo } = useCoffeeInfo()
+
+const roastLevelOptions = [
+  { value: 'light', labelKey: 'coffeeInfo.roastLevel.light' },
+  { value: 'medium', labelKey: 'coffeeInfo.roastLevel.medium' },
+  { value: 'mediumDark', labelKey: 'coffeeInfo.roastLevel.mediumDark' },
+  { value: 'dark', labelKey: 'coffeeInfo.roastLevel.dark' },
+] as const
 </script>
